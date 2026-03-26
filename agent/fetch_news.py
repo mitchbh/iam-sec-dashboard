@@ -109,20 +109,34 @@ Voorbeeld:
     return json.loads(raw.strip())
 
 
+# ── Geschiedenis laden ─────────────────────────────────────────────────────────
+
+def load_existing(output_path: str) -> dict:
+    """Laad bestaande data.json als die al bestaat, anders geef lege structuur terug."""
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"stats": {}, "history": {}, "items": []}
+
+
 # ── Alles samenvoegen ──────────────────────────────────────────────────────────
 
-def build_data(articles: list[dict], analyses: list[dict]) -> dict:
-    """Combineer artikelen met Claude's analyse tot dashboard-data."""
+def build_data(articles: list[dict], analyses: list[dict], existing: dict) -> dict:
+    """Combineer nieuwe artikelen met bestaande geschiedenis."""
     analysis_map = {a["index"]: a for a in analyses}
     today = datetime.date.today().isoformat()
 
-    items = []
+    # Nieuwe items van vandaag bouwen
+    new_items = []
     for i, article in enumerate(articles):
         analysis = analysis_map.get(i + 1, {})
         if not analysis.get("relevant", True):
             continue
-        items.append({
-            "id": i + 1,
+        new_items.append({
+            "id": f"{today}-{i+1}",
             "title": article["title"],
             "summary": analysis.get("samenvatting", article["summary"]),
             "impact_label": analysis.get("impact_nl", ""),
@@ -136,21 +150,38 @@ def build_data(articles: list[dict], analyses: list[dict]) -> dict:
         })
 
     # Sorteren: high impact eerst, dan actie_vereist
-    items.sort(key=lambda x: (
+    new_items.sort(key=lambda x: (
         {"high": 0, "medium": 1, "low": 2}.get(x["impact"], 1),
         not x["actie_vereist"]
     ))
 
+    # Geschiedenis bijwerken: sla items op per datum
+    history = existing.get("history", {})
+    history[today] = new_items
+
+    # Maximaal 90 dagen bewaren zodat het bestand niet eindeloos groeit
+    if len(history) > 90:
+        oldest = sorted(history.keys())[0]
+        del history[oldest]
+        print(f"   Oudste dag ({oldest}) verwijderd uit archief (max 90 dagen)")
+
+    # Stats alleen over vandaag
     stats = {
-        "total": len(items),
-        "high_impact": sum(1 for x in items if x["impact"] == "high"),
-        "actie_vereist": sum(1 for x in items if x["actie_vereist"]),
-        "identity_count": sum(1 for x in items if x["category"] == "identity"),
+        "total": len(new_items),
+        "high_impact": sum(1 for x in new_items if x["impact"] == "high"),
+        "actie_vereist": sum(1 for x in new_items if x["actie_vereist"]),
+        "identity_count": sum(1 for x in new_items if x["category"] == "identity"),
         "last_updated": datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
         "date": today,
+        "days_archived": len(history),
     }
 
-    return {"stats": stats, "items": items}
+    # items = vandaag (voor het dashboard), history = volledig archief
+    return {
+        "stats": stats,
+        "items": new_items,
+        "history": history,
+    }
 
 
 # ── Hoofdprogramma ─────────────────────────────────────────────────────────────
@@ -158,7 +189,13 @@ def build_data(articles: list[dict], analyses: list[dict]) -> dict:
 def main():
     print("Agent gestart...")
 
-    print("1/3 Nieuws ophalen...")
+    output_path = os.path.join(os.path.dirname(__file__), "..", "public", "data.json")
+
+    print("1/4 Bestaande data laden...")
+    existing = load_existing(output_path)
+    print(f"   {len(existing.get('history', {}))} dag(en) in archief")
+
+    print("2/4 Nieuws ophalen...")
     articles = fetch_articles(max_per_feed=5)
     print(f"   {len(articles)} artikelen gevonden")
 
@@ -166,19 +203,18 @@ def main():
         print("Geen artikelen gevonden, agent stopt.")
         return
 
-    print("2/3 Claude analyseert artikelen...")
+    print("3/4 Claude analyseert artikelen...")
     analyses = analyse_with_claude(articles)
     print(f"   {len(analyses)} analyses ontvangen")
 
-    print("3/3 Data opslaan...")
-    data = build_data(articles, analyses)
+    print("4/4 Data opslaan met geschiedenis...")
+    data = build_data(articles, analyses, existing)
 
-    output_path = os.path.join(os.path.dirname(__file__), "..", "public", "data.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"Klaar! {data['stats']['total']} relevante items opgeslagen.")
-    print(f"Waarvan {data['stats']['high_impact']} met hoge impact.")
+    print(f"Klaar! {data['stats']['total']} nieuwe items opgeslagen.")
+    print(f"Archief bevat nu {data['stats']['days_archived']} dag(en).")
 
 
 if __name__ == "__main__":
