@@ -1,11 +1,51 @@
 {
   "stats": {
-    "total": 0,
-    "high_impact": 0,
-    "actie_vereist": 0,
+    "total": 3,
+    "high_impact": 2,
+    "actie_vereist": 2,
     "identity_count": 0,
-    "last_updated": "Nog niet geladen",
-    "date": ""
+    "last_updated": "2026-03-26 20:09 UTC",
+    "date": "2026-03-26"
   },
-  "items": []
+  "items": [
+    {
+      "id": 1,
+      "title": "Identity security is the new pressure point for modern cyberattacks",
+      "summary": "Microsoft's Secure Access rapport toont dat identiteitsbeveiliging het nieuwe primaire doelwit is van moderne cyberaanvallen. Een geïntegreerde identity en access strategie biedt sterke bescherming tegen hedendaagse bedreigingen. IAM-beheerders moeten hun bestaande beveiligingsarchitectuur evalueren.",
+      "impact_label": "Identity security vormt het nieuwe hoofdaanvalspunt voor cybercriminelen",
+      "impact": "high",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/",
+      "published": "Wed, 25 Mar 2026 16:00:00 +0000",
+      "actie_vereist": true,
+      "date": "2026-03-26"
+    },
+    {
+      "id": 4,
+      "title": "Case study: How predictive shielding in Defender stopped GPO-based ransomware before it started",
+      "summary": "Microsoft Defender's predictive shielding functionaliteit blokkeerde een ransomware aanval die Group Policy Objects misbruikte om verdedigingen uit te schakelen. De functie beschermde 700 apparaten en voorkwam alle GPO-gebaseerde encryptie pogingen. Toont de waarde van proactieve GPO-beveiliging.",
+      "impact_label": "Predictive shielding in Defender voorkomt GPO-gebaseerde ransomware aanvallen",
+      "impact": "high",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/23/case-study-predictive-shielding-defender-stopped-gpo-based-ransomware-before-started/",
+      "published": "Mon, 23 Mar 2026 16:00:00 +0000",
+      "actie_vereist": true,
+      "date": "2026-03-26"
+    },
+    {
+      "id": 3,
+      "title": "Governing AI agent behavior: Aligning user, developer, role, and organizational intent",
+      "summary": "Microsoft onderzoeksrapport over het afstemmen van AI-agent gedrag met gebruikers-, ontwikkelaar- en organisatie-intenties. Belangrijk voor organisaties die AI-agents willen implementeren binnen hun M365 omgeving. Richtlijnen voor veilige enterprise AI adoptie worden gepresenteerd.",
+      "impact_label": "AI-agents governance voor veilige enterprise adoptie",
+      "impact": "medium",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/governing-ai-agent-behavior-aligning-user-developer-role-and-organizational-inte/4503551",
+      "published": "Tue, 24 Mar 2026 17:00:00 +0000",
+      "actie_vereist": false,
+      "date": "2026-03-26"
+    }
+  ]
 }
