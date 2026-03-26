@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M365 & IAM Intelligence Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #141720;
+    --surface2: #1c2130;
+    --border: #252c3f;
+    --accent: #4f7cff;
+    --accent2: #7c4fff;
+    --success: #22d3a0;
+    --warning: #f5a623;
+    --danger: #ff4f6b;
+    --text: #e8eaf2;
+    --muted: #6b7599;
+    --subtle: #3a4260;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Subtle grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    grid-row: 1 / 3;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .logo {
+    padding: 0 24px 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+
+  .logo-mark {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .logo-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  .nav-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0 24px 10px;
+    margin-top: 8px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 400;
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+  }
+
+  .nav-item:hover { color: var(--text); background: var(--surface2); }
+  .nav-item.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: rgba(79,124,255,0.07);
+  }
+
+  .nav-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--muted);
+    flex-shrink: 0;
+  }
+  .nav-item.active .nav-dot { background: var(--accent); }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 20px 24px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .agent-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,211,160,0.4); }
+    50% { box-shadow: 0 0 0 5px rgba(34,211,160,0); }
+  }
+
+  .next-run {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--success);
+    margin-top: 4px;
+  }
+
+  /* Topbar */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .page-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+  }
+
+  .topbar-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .date-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+  }
+
+  .filter-pills {
+    display: flex;
+    gap: 6px;
+  }
+
+  .pill {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+  .pill.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* Main content */
+  .main {
+    padding: 28px 32px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    opacity: 0;
+    animation: fadeUp 0.4s forwards;
+  }
+
+  .stat-card:nth-child(1) { animation-delay: 0.05s; }
+  .stat-card:nth-child(2) { animation-delay: 0.1s; }
+  .stat-card:nth-child(3) { animation-delay: 0.15s; }
+  .stat-card:nth-child(4) { animation-delay: 0.2s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .stat-value {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .stat-delta {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .delta-up { color: var(--success); }
+  .delta-down { color: var(--danger); }
+
+  /* News feed */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .see-all {
+    font-size: 12px;
+    color: var(--accent);
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    text-decoration: none;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .news-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0;
+    animation: fadeUp 0.4s forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .news-card.cat-security::before { background: var(--danger); }
+  .news-card.cat-identity::before { background: var(--accent); }
+  .news-card.cat-m365::before { background: var(--success); }
+  .news-card.cat-roadmap::before { background: var(--warning); }
+
+  .news-card:hover { border-color: var(--subtle); transform: translateY(-2px); }
+  .news-card:hover::before { opacity: 1; }
+
+  .news-card:nth-child(1) { animation-delay: 0.25s; }
+  .news-card:nth-child(2) { animation-delay: 0.3s; }
+  .news-card:nth-child(3) { animation-delay: 0.35s; }
+  .news-card:nth-child(4) { animation-delay: 0.4s; }
+  .news-card:nth-child(5) { animation-delay: 0.45s; }
+  .news-card:nth-child(6) { animation-delay: 0.5s; }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .cat-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .tag-security { background: rgba(255,79,107,0.12); color: var(--danger); }
+  .tag-identity { background: rgba(79,124,255,0.12); color: var(--accent); }
+  .tag-m365 { background: rgba(34,211,160,0.12); color: var(--success); }
+  .tag-roadmap { background: rgba(245,166,35,0.12); color: var(--warning); }
+
+  .card-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-left: auto;
+  }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+
+  .card-summary {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .card-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--subtle);
+  }
+
+  .impact-badge {
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .impact-high { background: rgba(255,79,107,0.1); color: var(--danger); }
+  .impact-medium { background: rgba(245,166,35,0.1); color: var(--warning); }
+  .impact-low { background: rgba(34,211,160,0.1); color: var(--success); }
+
+  /* Bottom row: CVE alerts + timeline */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 14px;
+  }
+
+  .cve-table {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 0.4s 0.55s forwards;
+  }
+
+  .table-header {
+    display: grid;
+    grid-template-columns: 120px 1fr 80px 80px;
+    padding: 10px 20px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 80px 80px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    align-items: center;
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+
+  .table-row:last-child { border-bottom: none; }
+  .table-row:hover { background: var(--surface2); }
+
+  .cve-id {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+  }
+
+  .severity {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .sev-critical { background: rgba(255,79,107,0.15); color: var(--danger); }
+  .sev-high { background: rgba(245,166,35,0.15); color: var(--warning); }
+  .sev-medium { background: rgba(79,124,255,0.15); color: var(--accent); }
+
+  .cvss {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text);
+    text-align: right;
+  }
+
+  /* Timeline panel */
+  .timeline-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeUp 0.4s 0.6s forwards;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 14px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 14px;
+    padding-bottom: 18px;
+    position: relative;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .tl-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 16px;
+  }
+
+  .tl-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: var(--bg);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .tl-connector {
+    width: 1px;
+    flex: 1;
+    background: var(--border);
+    margin-top: 4px;
+    min-height: 20px;
+  }
+
+  .timeline-item:last-child .tl-connector { display: none; }
+
+  .tl-content {}
+
+  .tl-day {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+
+  .tl-text {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* Responsive hint */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .news-grid { grid-template-columns: 1fr; }
+    .bottom-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-mark">M365 · IAM<br>Intelligence</div>
+      <div class="logo-sub">Agent Dashboard v1.0</div>
+    </div>
+
+    <div class="nav-label">Overzicht</div>
+    <div class="nav-item active"><span class="nav-dot"></span>Vandaag's digest</div>
+    <div class="nav-item"><span class="nav-dot"></span>Alle updates</div>
+    <div class="nav-item"><span class="nav-dot"></span>CVE tracker</div>
+
+    <div class="nav-label" style="margin-top:16px;">Categorieën</div>
+    <div class="nav-item"><span class="nav-dot"></span>Entra ID / IAM</div>
+    <div class="nav-item"><span class="nav-dot"></span>Microsoft 365</div>
+    <div class="nav-item"><span class="nav-dot"></span>Security</div>
+    <div class="nav-item"><span class="nav-dot"></span>Roadmap</div>
+
+    <div class="nav-label" style="margin-top:16px;">Instellingen</div>
+    <div class="nav-item"><span class="nav-dot"></span>Bronnen beheren</div>
+    <div class="nav-item"><span class="nav-dot"></span>Notificaties</div>
+
+    <div class="sidebar-footer">
+      <div class="agent-status">
+        <div class="pulse"></div>
+        Agent actief
+      </div>
+      <div class="next-run">Volgende run: 07:00</div>
+    </div>
+  </aside>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="page-title">Vandaag's digest</div>
+    <div class="topbar-meta">
+      <div class="date-badge">do 26 mrt 2026 · 07:14</div>
+      <div class="filter-pills">
+        <div class="pill active" onclick="filterAll(this)">Alles</div>
+        <div class="pill" onclick="filterCat(this,'security')">Security</div>
+        <div class="pill" onclick="filterCat(this,'identity')">Identity</div>
+        <div class="pill" onclick="filterCat(this,'m365')">M365</div>
+        <div class="pill" onclick="filterCat(this,'roadmap')">Roadmap</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Stats -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Updates vandaag</div>
+        <div class="stat-value" style="color:var(--accent)" id="stat-total">—</div>
+        <div class="stat-delta" id="stat-updated">Laden...</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Hoge impact</div>
+        <div class="stat-value" style="color:var(--danger)" id="stat-high">—</div>
+        <div class="stat-delta" id="stat-actie">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Entra ID updates</div>
+        <div class="stat-value" style="color:var(--success)" id="stat-identity">—</div>
+        <div class="stat-delta">Vandaag</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Actie vereist</div>
+        <div class="stat-value" style="color:var(--warning)" id="stat-actie-count">—</div>
+        <div class="stat-delta">Controleer direct</div>
+      </div>
+    </div>
+
+    <!-- News feed -->
+    <div>
+      <div class="section-header">
+        <div class="section-title">Nieuwste updates</div>
+        <span class="see-all" id="total-label"></span>
+      </div>
+      <div class="news-grid" id="newsgrid">
+        <div style="grid-column:1/-1;color:var(--muted);font-size:13px;padding:20px 0;">Nieuws laden...</div>
+      </div>
+    </div>
+
+    <!-- Bottom row: timeline alleen (CVE komt uit feed) -->
+    <div class="bottom-row" style="grid-template-columns:1fr 340px">
+
+      <!-- High impact items tabel -->
+      <div class="cve-table" id="high-impact-table">
+        <div class="section-header" style="padding:16px 20px 0;">
+          <div class="section-title">Hoge impact — actie vereist</div>
+        </div>
+        <div class="table-header" style="margin-top:14px;grid-template-columns:1fr 120px 80px;">
+          <span>Titel</span>
+          <span>Bron</span>
+          <span>Impact</span>
+        </div>
+        <div id="high-impact-rows">
+          <div style="padding:16px 20px;color:var(--muted);font-size:12px;">Laden...</div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline-panel">
+        <div class="section-title">Recente items</div>
+        <div class="timeline" id="timeline">
+          <div style="color:var(--muted);font-size:12px;margin-top:14px;">Laden...</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  const CAT_LABELS = { security: 'Security', identity: 'Entra ID', m365: 'M365', roadmap: 'Roadmap' };
+  const CAT_CLASSES = { security: 'tag-security', identity: 'tag-identity', m365: 'tag-m365', roadmap: 'tag-roadmap' };
+  const IMPACT_LABELS = { high: 'Hoge impact', medium: 'Gemiddelde impact', low: 'Lage impact' };
+  const IMPACT_CLASSES = { high: 'impact-high', medium: 'impact-medium', low: 'impact-low' };
+  const DOT_COLORS = { high: 'var(--danger)', medium: 'var(--warning)', low: 'var(--success)', identity: 'var(--accent)' };
+
+  let allItems = [];
+  let activeFilter = 'all';
+
+  function renderCards(items) {
+    const grid = document.getElementById('newsgrid');
+    if (!items.length) {
+      grid.innerHTML = '<div style="grid-column:1/-1;color:var(--muted);font-size:13px;padding:20px 0;">Geen items gevonden voor deze categorie.</div>';
+      return;
+    }
+    grid.innerHTML = items.map((item, i) => `
+      <div class="news-card cat-${item.category}" data-cat="${item.category}"
+           style="animation-delay:${0.05 * i}s; cursor:pointer;"
+           onclick="window.open('${item.link}','_blank')">
+        <div class="card-meta">
+          <span class="cat-tag ${CAT_CLASSES[item.category] || ''}">${CAT_LABELS[item.category] || item.category}</span>
+          ${item.actie_vereist ? '<span style="font-size:10px;color:var(--danger);font-family:\'DM Mono\',monospace;">ACTIE VEREIST</span>' : ''}
+          <span class="card-date">${item.date || ''}</span>
+        </div>
+        <div class="card-title">${item.title}</div>
+        <div class="card-summary">${item.summary}</div>
+        <div class="card-footer">
+          <span class="card-source">${item.source}</span>
+          <span class="impact-badge ${IMPACT_CLASSES[item.impact] || ''}">${item.impact_label || IMPACT_LABELS[item.impact] || ''}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderHighImpact(items) {
+    const high = items.filter(x => x.impact === 'high' || x.actie_vereist);
+    const el = document.getElementById('high-impact-rows');
+    if (!high.length) {
+      el.innerHTML = '<div style="padding:16px 20px;color:var(--muted);font-size:12px;">Geen hoge impact items vandaag.</div>';
+      return;
+    }
+    el.innerHTML = high.map(item => `
+      <div class="table-row" style="grid-template-columns:1fr 120px 80px;" onclick="window.open('${item.link}','_blank')">
+        <span style="color:var(--text);font-size:12px;">${item.title}</span>
+        <span style="color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;">${item.source.split(' ').slice(0,3).join(' ')}</span>
+        <span><span class="severity sev-critical" style="font-size:10px;">Hoog</span></span>
+      </div>
+    `).join('');
+  }
+
+  function renderTimeline(items) {
+    const tl = document.getElementById('timeline');
+    const recent = items.slice(0, 6);
+    if (!recent.length) {
+      tl.innerHTML = '<div style="color:var(--muted);font-size:12px;margin-top:14px;">Geen recente items.</div>';
+      return;
+    }
+    tl.innerHTML = recent.map((item, i) => `
+      <div class="timeline-item">
+        <div class="tl-line">
+          <div class="tl-dot" style="border-color:${DOT_COLORS[item.impact] || DOT_COLORS[item.category] || 'var(--accent)'}"></div>
+          ${i < recent.length - 1 ? '<div class="tl-connector"></div>' : ''}
+        </div>
+        <div class="tl-content">
+          <div class="tl-day">${item.date || ''}</div>
+          <div class="tl-text">${item.title}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function filterAll(el) {
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    activeFilter = 'all';
+    renderCards(allItems);
+  }
+
+  function filterCat(el, cat) {
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    activeFilter = cat;
+    renderCards(allItems.filter(x => x.category === cat));
+  }
+
+  async function loadData() {
+    try {
+      const res = await fetch('public/data.json?t=' + Date.now());
+      const data = await res.json();
+      const s = data.stats || {};
+
+      document.getElementById('stat-total').textContent = s.total ?? '—';
+      document.getElementById('stat-updated').textContent = s.last_updated || '';
+      document.getElementById('stat-high').textContent = s.high_impact ?? '—';
+      document.getElementById('stat-actie').textContent = s.actie_vereist ? `${s.actie_vereist} acties` : 'Geen acties';
+      document.getElementById('stat-identity').textContent = s.identity_count ?? '—';
+      document.getElementById('stat-actie-count').textContent = s.actie_vereist ?? '—';
+      document.getElementById('total-label').textContent = `alle ${s.total} bekijken →`;
+
+      allItems = data.items || [];
+      renderCards(allItems);
+      renderHighImpact(allItems);
+      renderTimeline(allItems);
+    } catch (e) {
+      document.getElementById('newsgrid').innerHTML =
+        '<div style="grid-column:1/-1;color:var(--muted);font-size:13px;padding:20px 0;">Data kon niet worden geladen. Controleer of data.json bestaat.</div>';
+    }
+  }
+
+  loadData();
+</script>
+</body>
+</html>

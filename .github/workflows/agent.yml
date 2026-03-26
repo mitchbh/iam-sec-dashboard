@@ -1,0 +1,37 @@
+name: M365 IAM Daily Agent
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # elke dag om 07:00 NL tijd (06:00 UTC)
+  workflow_dispatch:        # ook handmatig te starten via GitHub UI
+
+jobs:
+  fetch-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic requests feedparser
+
+      - name: Run agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python agent/fetch_news.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "M365 IAM Agent"
+          git config user.email "agent@noreply.github.com"
+          git add public/data.json
+          git diff --staged --quiet || git commit -m "chore: dagelijkse update $(date +'%Y-%m-%d')"
+          git push
