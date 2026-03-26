@@ -764,7 +764,7 @@
 
   async function loadData() {
     try {
-      const res = await fetch('public/data.json' + Date.now());
+      const res = await fetch('/data.json?t=' + Date.now());
       const data = await res.json();
       const s = data.stats || {};
 
