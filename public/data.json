@@ -2,77 +2,77 @@
   "stats": {
     "total": 5,
     "high_impact": 2,
-    "actie_vereist": 2,
+    "actie_vereist": 3,
     "identity_count": 0,
-    "last_updated": "2026-03-29 07:01 UTC",
-    "date": "2026-03-29",
-    "days_archived": 3
+    "last_updated": "2026-03-30 07:25 UTC",
+    "date": "2026-03-30",
+    "days_archived": 4
   },
   "items": [
     {
-      "id": "2026-03-29-2",
+      "id": "2026-03-30-2",
       "title": "Identity security is the new pressure point for modern cyberattacks",
-      "summary": "Het Microsoft Secure Access rapport benadrukt dat identiteitsbeveiliging het nieuwe aanvalspunt is geworden. Een geünificeerde identity en access strategie biedt sterke moderne bescherming tegen deze groeiende bedreiging.",
-      "impact_label": "Identiteitsbeveiliging wordt steeds kritiekere factor voor cyberaanvallen",
+      "summary": "Identiteitsveiligheid wordt steeds belangrijker als aanvalsdoel in moderne cyberaanvallen. Microsoft benadrukt het belang van een uniforme identity en access strategie voor sterke bescherming tegen hedendaagse bedreigingen.",
+      "impact_label": "Identiteitsveiligheid is kritiek voor moderne cyberaanvallen",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/",
       "published": "Wed, 25 Mar 2026 16:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-03-29"
+      "date": "2026-03-30"
     },
     {
-      "id": "2026-03-29-5",
+      "id": "2026-03-30-5",
       "title": "Case study: How predictive shielding in Defender stopped GPO-based ransomware before it started",
-      "summary": "Microsoft Defender stopte een ransomware aanval die Group Policy Objects misbruikte om verdediging uit te schakelen. Predictive shielding verhardde 700 devices preventief, wat resulteerde in nul GPO-gebaseerde encrypties.",
-      "impact_label": "Predictive shielding voorkomt GPO-gebaseerde ransomware aanvallen succesvol",
+      "summary": "Microsoft Defender stopte een ransomware aanval die Group Policy Objects misbruikte om beveiligingen uit te schakelen. Predictive shielding beschermde 700 apparaten en voorkwam GPO-gebaseerde encryptie volledig.",
+      "impact_label": "Ransomware preventie via GPO misbruik, 700 devices beschermd",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/23/case-study-predictive-shielding-defender-stopped-gpo-based-ransomware-before-started/",
       "published": "Mon, 23 Mar 2026 16:00:00 +0000",
-      "actie_vereist": false,
-      "date": "2026-03-29"
+      "actie_vereist": true,
+      "date": "2026-03-30"
     },
     {
-      "id": "2026-03-29-3",
+      "id": "2026-03-30-3",
       "title": "Guidance for detecting, investigating, and defending against the Trivy supply chain compromise",
-      "summary": "Aanvallers hebben Trivy distributiekanalen gecompromitteerd om credential-stealing malware in CI/CD pipelines te injecteren. Microsoft biedt concrete stappen voor detectie en verdediging tegen vergelijkbare supply chain aanvallen.",
-      "impact_label": "Supply chain aanval op Trivy vereist detection en defense maatregelen",
+      "summary": "Aanvallers hebben de Trivy distributiekanalen misbruikt om credential-stealing malware in CI/CD pipelines te injecteren. Microsoft geeft concrete stappen voor detectie en verdediging tegen vergelijkbare supply chain aanvallen.",
+      "impact_label": "Supply chain aanval via Trivy, impact op CI/CD pipelines",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/",
       "published": "Wed, 25 Mar 2026 00:03:03 +0000",
       "actie_vereist": true,
-      "date": "2026-03-29"
+      "date": "2026-03-30"
     },
     {
-      "id": "2026-03-29-1",
+      "id": "2026-03-30-1",
       "title": "How Microsoft Defender protects high-value assets in real-world attack scenarios",
-      "summary": "Microsoft Defender gebruikt Security Exposure Management om kritieke assets zoals domeincontrollers en identiteitssystemen te beschermen. Het artikel toont real-world aanvalsscenario's en verdedigingstechnieken voor high-value targets.",
-      "impact_label": "Nieuwe beveiligingsmogelijkheden voor bescherming van kritieke systemen",
+      "summary": "Microsoft Defender gebruikt Security Exposure Management om high-value assets zoals domeincontrollers en identiteitsinfrastructuur te beschermen. Het artikel toont real-world aanvalsscenario's en verdedigingstechnieken voor kritieke systemen.",
+      "impact_label": "Verbetering van beveiliging voor kritieke assets zoals domeincontrollers",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/",
       "published": "Fri, 27 Mar 2026 19:53:53 +0000",
       "actie_vereist": false,
-      "date": "2026-03-29"
+      "date": "2026-03-30"
     },
     {
-      "id": "2026-03-29-4",
+      "id": "2026-03-30-4",
       "title": "Governing AI agent behavior: Aligning user, developer, role, and organizational intent",
-      "summary": "Microsoft onderzoekt hoe AI agent gedrag kan worden gestuurd door verschillende intentielagen af te stemmen. Het rapport richt zich op veilige enterprise AI adoptie door alignment van gebruiker-, ontwikkelaar- en organisatie-intenties.",
-      "impact_label": "Governance framework voor veilige AI agent implementatie in organisaties",
+      "summary": "Microsoft onderzoekt hoe AI agent gedrag kan worden gestuurd en uitgelijnd met organisatiedoelstellingen. Het rapport richt zich op veilige adoptie van AI agents in enterprise omgevingen.",
+      "impact_label": "Governance richtlijnen voor AI agents in enterprise omgevingen",
       "impact": "low",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/governing-ai-agent-behavior-aligning-user-developer-role-and-organizational-inte/4503551",
       "published": "Tue, 24 Mar 2026 17:00:00 +0000",
       "actie_vereist": false,
-      "date": "2026-03-29"
+      "date": "2026-03-30"
     }
   ],
   "history": {
@@ -236,6 +236,73 @@
         "published": "Tue, 24 Mar 2026 17:00:00 +0000",
         "actie_vereist": false,
         "date": "2026-03-29"
+      }
+    ],
+    "2026-03-30": [
+      {
+        "id": "2026-03-30-2",
+        "title": "Identity security is the new pressure point for modern cyberattacks",
+        "summary": "Identiteitsveiligheid wordt steeds belangrijker als aanvalsdoel in moderne cyberaanvallen. Microsoft benadrukt het belang van een uniforme identity en access strategie voor sterke bescherming tegen hedendaagse bedreigingen.",
+        "impact_label": "Identiteitsveiligheid is kritiek voor moderne cyberaanvallen",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/",
+        "published": "Wed, 25 Mar 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-03-30"
+      },
+      {
+        "id": "2026-03-30-5",
+        "title": "Case study: How predictive shielding in Defender stopped GPO-based ransomware before it started",
+        "summary": "Microsoft Defender stopte een ransomware aanval die Group Policy Objects misbruikte om beveiligingen uit te schakelen. Predictive shielding beschermde 700 apparaten en voorkwam GPO-gebaseerde encryptie volledig.",
+        "impact_label": "Ransomware preventie via GPO misbruik, 700 devices beschermd",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/23/case-study-predictive-shielding-defender-stopped-gpo-based-ransomware-before-started/",
+        "published": "Mon, 23 Mar 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-03-30"
+      },
+      {
+        "id": "2026-03-30-3",
+        "title": "Guidance for detecting, investigating, and defending against the Trivy supply chain compromise",
+        "summary": "Aanvallers hebben de Trivy distributiekanalen misbruikt om credential-stealing malware in CI/CD pipelines te injecteren. Microsoft geeft concrete stappen voor detectie en verdediging tegen vergelijkbare supply chain aanvallen.",
+        "impact_label": "Supply chain aanval via Trivy, impact op CI/CD pipelines",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/",
+        "published": "Wed, 25 Mar 2026 00:03:03 +0000",
+        "actie_vereist": true,
+        "date": "2026-03-30"
+      },
+      {
+        "id": "2026-03-30-1",
+        "title": "How Microsoft Defender protects high-value assets in real-world attack scenarios",
+        "summary": "Microsoft Defender gebruikt Security Exposure Management om high-value assets zoals domeincontrollers en identiteitsinfrastructuur te beschermen. Het artikel toont real-world aanvalsscenario's en verdedigingstechnieken voor kritieke systemen.",
+        "impact_label": "Verbetering van beveiliging voor kritieke assets zoals domeincontrollers",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/",
+        "published": "Fri, 27 Mar 2026 19:53:53 +0000",
+        "actie_vereist": false,
+        "date": "2026-03-30"
+      },
+      {
+        "id": "2026-03-30-4",
+        "title": "Governing AI agent behavior: Aligning user, developer, role, and organizational intent",
+        "summary": "Microsoft onderzoekt hoe AI agent gedrag kan worden gestuurd en uitgelijnd met organisatiedoelstellingen. Het rapport richt zich op veilige adoptie van AI agents in enterprise omgevingen.",
+        "impact_label": "Governance richtlijnen voor AI agents in enterprise omgevingen",
+        "impact": "low",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/governing-ai-agent-behavior-aligning-user-developer-role-and-organizational-inte/4503551",
+        "published": "Tue, 24 Mar 2026 17:00:00 +0000",
+        "actie_vereist": false,
+        "date": "2026-03-30"
       }
     ]
   }
