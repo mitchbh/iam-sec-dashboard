@@ -1,65 +1,78 @@
 {
   "stats": {
-    "total": 4,
+    "total": 5,
     "high_impact": 2,
     "actie_vereist": 2,
     "identity_count": 0,
-    "last_updated": "2026-03-31 07:12 UTC",
-    "date": "2026-03-31",
-    "days_archived": 5
+    "last_updated": "2026-04-01 07:18 UTC",
+    "date": "2026-04-01",
+    "days_archived": 6
   },
   "items": [
     {
-      "id": "2026-03-31-2",
-      "title": "How Microsoft Defender protects high-value assets in real-world attack scenarios",
-      "summary": "Microsoft Defender biedt gerichte bescherming voor kritieke assets zoals domain controllers, webservers en identity-infrastructuur via Security Exposure Management. Het artikel toont real-world aanvalsscenario's en verdedigingstechnieken. Essentieel voor IAM-beheerders die kritieke systemen beveiligen.",
-      "impact_label": "Cruciaal voor bescherming van domain controllers en identity infrastructuur",
+      "id": "2026-04-01-1",
+      "title": "The threat to critical infrastructure has changed. Has your readiness?",
+      "summary": "Microsoft Threat Intelligence waarschuwt dat dreigingen tegen kritieke infrastructuur zijn veranderd. Vijf cruciale feiten worden genoemd waar CI-leiders in 2026 actie op moeten ondernemen om hun beveiliging aan te passen aan de huidige dreigingslandschap.",
+      "impact_label": "Kritieke infrastructuur organisaties moeten dreigingsgereedheid aanpassen",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/",
-      "published": "Fri, 27 Mar 2026 19:53:53 +0000",
+      "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
+      "published": "Tue, 31 Mar 2026 17:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-03-31"
+      "date": "2026-04-01"
     },
     {
-      "id": "2026-03-31-3",
-      "title": "Identity security is the new pressure point for modern cyberattacks",
-      "summary": "Het Microsoft Secure Access rapport benadrukt dat identity security het nieuwe aanvalspunt is geworden voor moderne cyberaanvallen. Een uniforme identity en access strategie biedt sterke bescherming. Kernmateriaal voor elke IAM-specialist die moderne bedreigingen wil begrijpen.",
-      "impact_label": "Identity security is het nieuwe hoofddoelwit van cybercriminelen",
+      "id": "2026-04-01-3",
+      "title": "WhatsApp malware campaign delivers VBScript and MSI backdoors",
+      "summary": "Nieuwe malwarecampagne via WhatsApp gebruikt VBScript en MSI-backdoors voor systeemdoorbraak. Aanvallers gebruiken hernoemde Windows-tools en cloud-hosted payloads voor persistente toegang tot gecompromitteerde systemen.",
+      "impact_label": "WhatsApp malware vereist endpoint beveiliging en gebruikerstraining",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/",
-      "published": "Wed, 25 Mar 2026 16:00:00 +0000",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/",
+      "published": "Tue, 31 Mar 2026 13:43:05 +0000",
       "actie_vereist": true,
-      "date": "2026-03-31"
+      "date": "2026-04-01"
     },
     {
-      "id": "2026-03-31-1",
+      "id": "2026-04-01-2",
+      "title": "Applying security fundamentals to AI: Practical advice for CISOs",
+      "summary": "Praktische richtlijnen voor CISO's om AI-omgevingen te beveiligen. Het artikel behandelt risicomanagement en het toepassen van fundamentele beveiligingsprincipes in AI-gedreven omgevingen.",
+      "impact_label": "CISO's moeten AI-beveiliging integreren in beveiligingsstrategie",
+      "impact": "medium",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
+      "published": "Tue, 31 Mar 2026 16:00:00 +0000",
+      "actie_vereist": false,
+      "date": "2026-04-01"
+    },
+    {
+      "id": "2026-04-01-4",
       "title": "Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio",
-      "summary": "Microsoft beschrijft hoe de OWASP Top 10 risico's voor Agentic AI toepassingen kunnen worden gemitigeerd binnen Copilot Studio. Het artikel biedt concrete beveiligingsmaatregelen voor organisaties die AI-agents inzetten. Relevant voor het veilig implementeren van AI-functionaliteiten in M365.",
-      "impact_label": "Belangrijk voor organisaties die Copilot Studio AI-agents implementeren",
+      "summary": "Agentic AI introduceert nieuwe beveiligingsrisico's volgens OWASP Top 10. Het artikel toont hoe deze risico's kunnen worden beperkt binnen Microsoft Copilot Studio omgevingen.",
+      "impact_label": "Copilot Studio gebruikers moeten OWASP AI-risico's addresseren",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/",
       "published": "Mon, 30 Mar 2026 16:00:00 +0000",
       "actie_vereist": false,
-      "date": "2026-03-31"
+      "date": "2026-04-01"
     },
     {
-      "id": "2026-03-31-5",
-      "title": "Governing AI agent behavior: Aligning user, developer, role, and organizational intent",
-      "summary": "Onderzoeksrapport over het sturen van AI-agent gedrag door het aligneren van gebruikers-, ontwikkelaar-, rol- en organisatie-intenties. Richt zich op veilige enterprise AI-adoptie. Relevant voor organisaties die AI-governance willen implementeren binnen hun M365-omgeving.",
-      "impact_label": "Belangrijk voor governance van AI-agents in enterprise omgevingen",
+      "id": "2026-04-01-5",
+      "title": "How Microsoft Defender protects high-value assets in real-world attack scenarios",
+      "summary": "Microsoft Defender gebruikt Security Exposure Management voor asset-bewuste bescherming van waardevolle systemen zoals domeincontrollers en identiteitsinfrastructuur. Real-world aanvalsscenario's en verdedigingstechnieken worden toegelicht.",
+      "impact_label": "Microsoft Defender biedt verbeterde bescherming voor kritieke assets",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
-      "link": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/governing-ai-agent-behavior-aligning-user-developer-role-and-organizational-inte/4503551",
-      "published": "Tue, 24 Mar 2026 17:00:00 +0000",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/",
+      "published": "Fri, 27 Mar 2026 19:53:53 +0000",
       "actie_vereist": false,
-      "date": "2026-03-31"
+      "date": "2026-04-01"
     }
   ],
   "history": {
@@ -344,6 +357,73 @@
         "published": "Tue, 24 Mar 2026 17:00:00 +0000",
         "actie_vereist": false,
         "date": "2026-03-31"
+      }
+    ],
+    "2026-04-01": [
+      {
+        "id": "2026-04-01-1",
+        "title": "The threat to critical infrastructure has changed. Has your readiness?",
+        "summary": "Microsoft Threat Intelligence waarschuwt dat dreigingen tegen kritieke infrastructuur zijn veranderd. Vijf cruciale feiten worden genoemd waar CI-leiders in 2026 actie op moeten ondernemen om hun beveiliging aan te passen aan de huidige dreigingslandschap.",
+        "impact_label": "Kritieke infrastructuur organisaties moeten dreigingsgereedheid aanpassen",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
+        "published": "Tue, 31 Mar 2026 17:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-01"
+      },
+      {
+        "id": "2026-04-01-3",
+        "title": "WhatsApp malware campaign delivers VBScript and MSI backdoors",
+        "summary": "Nieuwe malwarecampagne via WhatsApp gebruikt VBScript en MSI-backdoors voor systeemdoorbraak. Aanvallers gebruiken hernoemde Windows-tools en cloud-hosted payloads voor persistente toegang tot gecompromitteerde systemen.",
+        "impact_label": "WhatsApp malware vereist endpoint beveiliging en gebruikerstraining",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/",
+        "published": "Tue, 31 Mar 2026 13:43:05 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-01"
+      },
+      {
+        "id": "2026-04-01-2",
+        "title": "Applying security fundamentals to AI: Practical advice for CISOs",
+        "summary": "Praktische richtlijnen voor CISO's om AI-omgevingen te beveiligen. Het artikel behandelt risicomanagement en het toepassen van fundamentele beveiligingsprincipes in AI-gedreven omgevingen.",
+        "impact_label": "CISO's moeten AI-beveiliging integreren in beveiligingsstrategie",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
+        "published": "Tue, 31 Mar 2026 16:00:00 +0000",
+        "actie_vereist": false,
+        "date": "2026-04-01"
+      },
+      {
+        "id": "2026-04-01-4",
+        "title": "Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio",
+        "summary": "Agentic AI introduceert nieuwe beveiligingsrisico's volgens OWASP Top 10. Het artikel toont hoe deze risico's kunnen worden beperkt binnen Microsoft Copilot Studio omgevingen.",
+        "impact_label": "Copilot Studio gebruikers moeten OWASP AI-risico's addresseren",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/",
+        "published": "Mon, 30 Mar 2026 16:00:00 +0000",
+        "actie_vereist": false,
+        "date": "2026-04-01"
+      },
+      {
+        "id": "2026-04-01-5",
+        "title": "How Microsoft Defender protects high-value assets in real-world attack scenarios",
+        "summary": "Microsoft Defender gebruikt Security Exposure Management voor asset-bewuste bescherming van waardevolle systemen zoals domeincontrollers en identiteitsinfrastructuur. Real-world aanvalsscenario's en verdedigingstechnieken worden toegelicht.",
+        "impact_label": "Microsoft Defender biedt verbeterde bescherming voor kritieke assets",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/",
+        "published": "Fri, 27 Mar 2026 19:53:53 +0000",
+        "actie_vereist": false,
+        "date": "2026-04-01"
       }
     ]
   }
