@@ -4,75 +4,75 @@
     "high_impact": 2,
     "actie_vereist": 2,
     "identity_count": 0,
-    "last_updated": "2026-04-01 07:18 UTC",
-    "date": "2026-04-01",
-    "days_archived": 6
+    "last_updated": "2026-04-02 07:10 UTC",
+    "date": "2026-04-02",
+    "days_archived": 7
   },
   "items": [
     {
-      "id": "2026-04-01-1",
-      "title": "The threat to critical infrastructure has changed. Has your readiness?",
-      "summary": "Microsoft Threat Intelligence waarschuwt dat dreigingen tegen kritieke infrastructuur zijn veranderd. Vijf cruciale feiten worden genoemd waar CI-leiders in 2026 actie op moeten ondernemen om hun beveiliging aan te passen aan de huidige dreigingslandschap.",
-      "impact_label": "Kritieke infrastructuur organisaties moeten dreigingsgereedheid aanpassen",
+      "id": "2026-04-02-1",
+      "title": "Mitigating the Axios npm supply chain compromise",
+      "summary": "De populaire JavaScript HTTP client Axios werd gecompromitteerd door Noord-Koreaanse hackers via malware in npm packages. Hoewel de malware versies offline zijn, kunnen miljoenen gebruikers blootgesteld zijn geweest. Organisaties moeten hun JavaScript dependencies controleren en updaten.",
+      "impact_label": "Supply chain aanval op populaire npm package Axios",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
-      "published": "Tue, 31 Mar 2026 17:00:00 +0000",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+      "published": "Wed, 01 Apr 2026 21:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-04-01"
+      "date": "2026-04-02"
     },
     {
-      "id": "2026-04-01-3",
+      "id": "2026-04-02-4",
       "title": "WhatsApp malware campaign delivers VBScript and MSI backdoors",
-      "summary": "Nieuwe malwarecampagne via WhatsApp gebruikt VBScript en MSI-backdoors voor systeemdoorbraak. Aanvallers gebruiken hernoemde Windows-tools en cloud-hosted payloads voor persistente toegang tot gecompromitteerde systemen.",
-      "impact_label": "WhatsApp malware vereist endpoint beveiliging en gebruikerstraining",
+      "summary": "Een nieuwe malware campagne gebruikt WhatsApp berichten om VBScript te verspreiden dat een multi-stage infectieketen start. De aanval gebruikt hernoemde Windows tools en cloud-hosted payloads voor persistente toegang. Organisaties moeten endpoint beveiliging en gebruikerstraining versterken.",
+      "impact_label": "WhatsApp malware installeert backdoors via VBScript en MSI",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/",
       "published": "Tue, 31 Mar 2026 13:43:05 +0000",
       "actie_vereist": true,
-      "date": "2026-04-01"
+      "date": "2026-04-02"
     },
     {
-      "id": "2026-04-01-2",
+      "id": "2026-04-02-2",
+      "title": "The threat to critical infrastructure has changed. Has your readiness?",
+      "summary": "Microsoft Threat Intelligence rapporteert veranderende dreigingen voor kritieke infrastructuur. Het artikel presenteert vijf belangrijke feiten waar CI-leiders op moeten anticiperen. Relevant voor organisaties die kritieke diensten leveren of afhankelijk zijn van kritieke infrastructuur.",
+      "impact_label": "Nieuwe dreigingen voor kritieke infrastructuur in 2026",
+      "impact": "medium",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
+      "published": "Tue, 31 Mar 2026 17:00:00 +0000",
+      "actie_vereist": false,
+      "date": "2026-04-02"
+    },
+    {
+      "id": "2026-04-02-3",
       "title": "Applying security fundamentals to AI: Practical advice for CISOs",
-      "summary": "Praktische richtlijnen voor CISO's om AI-omgevingen te beveiligen. Het artikel behandelt risicomanagement en het toepassen van fundamentele beveiligingsprincipes in AI-gedreven omgevingen.",
-      "impact_label": "CISO's moeten AI-beveiliging integreren in beveiligingsstrategie",
+      "summary": "Microsoft biedt praktisch advies voor CISO's over het beveiligen van AI-systemen en risicomanagement. Het artikel behandelt kernprincipes voor beveiliging in AI-gedreven omgevingen. Belangrijk voor organisaties die AI-technologieën implementeren of overwegen.",
+      "impact_label": "Praktische AI-beveiligingsrichtlijnen voor CISO's en IT-beheerders",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
       "published": "Tue, 31 Mar 2026 16:00:00 +0000",
       "actie_vereist": false,
-      "date": "2026-04-01"
+      "date": "2026-04-02"
     },
     {
-      "id": "2026-04-01-4",
+      "id": "2026-04-02-5",
       "title": "Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio",
-      "summary": "Agentic AI introduceert nieuwe beveiligingsrisico's volgens OWASP Top 10. Het artikel toont hoe deze risico's kunnen worden beperkt binnen Microsoft Copilot Studio omgevingen.",
-      "impact_label": "Copilot Studio gebruikers moeten OWASP AI-risico's addresseren",
+      "summary": "Microsoft behandelt de OWASP Top 10 beveiligingsrisico's voor agentic AI applicaties en hoe deze kunnen worden aangepakt in Copilot Studio. Het artikel biedt concrete mitigaties voor organisaties die AI agents ontwikkelen of implementeren.",
+      "impact_label": "OWASP Top 10 risico's voor AI agents in Copilot Studio",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/",
       "published": "Mon, 30 Mar 2026 16:00:00 +0000",
       "actie_vereist": false,
-      "date": "2026-04-01"
-    },
-    {
-      "id": "2026-04-01-5",
-      "title": "How Microsoft Defender protects high-value assets in real-world attack scenarios",
-      "summary": "Microsoft Defender gebruikt Security Exposure Management voor asset-bewuste bescherming van waardevolle systemen zoals domeincontrollers en identiteitsinfrastructuur. Real-world aanvalsscenario's en verdedigingstechnieken worden toegelicht.",
-      "impact_label": "Microsoft Defender biedt verbeterde bescherming voor kritieke assets",
-      "impact": "medium",
-      "category": "security",
-      "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/",
-      "published": "Fri, 27 Mar 2026 19:53:53 +0000",
-      "actie_vereist": false,
-      "date": "2026-04-01"
+      "date": "2026-04-02"
     }
   ],
   "history": {
@@ -424,6 +424,73 @@
         "published": "Fri, 27 Mar 2026 19:53:53 +0000",
         "actie_vereist": false,
         "date": "2026-04-01"
+      }
+    ],
+    "2026-04-02": [
+      {
+        "id": "2026-04-02-1",
+        "title": "Mitigating the Axios npm supply chain compromise",
+        "summary": "De populaire JavaScript HTTP client Axios werd gecompromitteerd door Noord-Koreaanse hackers via malware in npm packages. Hoewel de malware versies offline zijn, kunnen miljoenen gebruikers blootgesteld zijn geweest. Organisaties moeten hun JavaScript dependencies controleren en updaten.",
+        "impact_label": "Supply chain aanval op populaire npm package Axios",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+        "published": "Wed, 01 Apr 2026 21:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-02"
+      },
+      {
+        "id": "2026-04-02-4",
+        "title": "WhatsApp malware campaign delivers VBScript and MSI backdoors",
+        "summary": "Een nieuwe malware campagne gebruikt WhatsApp berichten om VBScript te verspreiden dat een multi-stage infectieketen start. De aanval gebruikt hernoemde Windows tools en cloud-hosted payloads voor persistente toegang. Organisaties moeten endpoint beveiliging en gebruikerstraining versterken.",
+        "impact_label": "WhatsApp malware installeert backdoors via VBScript en MSI",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/",
+        "published": "Tue, 31 Mar 2026 13:43:05 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-02"
+      },
+      {
+        "id": "2026-04-02-2",
+        "title": "The threat to critical infrastructure has changed. Has your readiness?",
+        "summary": "Microsoft Threat Intelligence rapporteert veranderende dreigingen voor kritieke infrastructuur. Het artikel presenteert vijf belangrijke feiten waar CI-leiders op moeten anticiperen. Relevant voor organisaties die kritieke diensten leveren of afhankelijk zijn van kritieke infrastructuur.",
+        "impact_label": "Nieuwe dreigingen voor kritieke infrastructuur in 2026",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
+        "published": "Tue, 31 Mar 2026 17:00:00 +0000",
+        "actie_vereist": false,
+        "date": "2026-04-02"
+      },
+      {
+        "id": "2026-04-02-3",
+        "title": "Applying security fundamentals to AI: Practical advice for CISOs",
+        "summary": "Microsoft biedt praktisch advies voor CISO's over het beveiligen van AI-systemen en risicomanagement. Het artikel behandelt kernprincipes voor beveiliging in AI-gedreven omgevingen. Belangrijk voor organisaties die AI-technologieën implementeren of overwegen.",
+        "impact_label": "Praktische AI-beveiligingsrichtlijnen voor CISO's en IT-beheerders",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
+        "published": "Tue, 31 Mar 2026 16:00:00 +0000",
+        "actie_vereist": false,
+        "date": "2026-04-02"
+      },
+      {
+        "id": "2026-04-02-5",
+        "title": "Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio",
+        "summary": "Microsoft behandelt de OWASP Top 10 beveiligingsrisico's voor agentic AI applicaties en hoe deze kunnen worden aangepakt in Copilot Studio. Het artikel biedt concrete mitigaties voor organisaties die AI agents ontwikkelen of implementeren.",
+        "impact_label": "OWASP Top 10 risico's voor AI agents in Copilot Studio",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/",
+        "published": "Mon, 30 Mar 2026 16:00:00 +0000",
+        "actie_vereist": false,
+        "date": "2026-04-02"
       }
     ]
   }
