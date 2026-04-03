@@ -1,78 +1,65 @@
 {
   "stats": {
-    "total": 5,
+    "total": 4,
     "high_impact": 2,
-    "actie_vereist": 2,
+    "actie_vereist": 4,
     "identity_count": 0,
-    "last_updated": "2026-04-02 07:10 UTC",
-    "date": "2026-04-02",
-    "days_archived": 7
+    "last_updated": "2026-04-03 07:06 UTC",
+    "date": "2026-04-03",
+    "days_archived": 8
   },
   "items": [
     {
-      "id": "2026-04-02-1",
-      "title": "Mitigating the Axios npm supply chain compromise",
-      "summary": "De populaire JavaScript HTTP client Axios werd gecompromitteerd door Noord-Koreaanse hackers via malware in npm packages. Hoewel de malware versies offline zijn, kunnen miljoenen gebruikers blootgesteld zijn geweest. Organisaties moeten hun JavaScript dependencies controleren en updaten.",
-      "impact_label": "Supply chain aanval op populaire npm package Axios",
+      "id": "2026-04-03-1",
+      "title": "Threat actor abuse of AI accelerates from tool to cyberattack surface",
+      "summary": "Cybercriminelen gebruiken generative AI om geavanceerdere aanvallen uit te voeren, met een drastische toename in phishing-effectiviteit. De technologie wordt niet alleen als tool gebruikt maar vormt ook een nieuw aanvalsvector. Dit heeft directe gevolgen voor organisaties die afhankelijk zijn van traditionele beveiligingsmaatregelen.",
+      "impact_label": "AI verhoogt phishing-succes met 450% en bypast MFA industrieel",
       "impact": "high",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/",
+      "published": "Thu, 02 Apr 2026 16:00:00 +0000",
+      "actie_vereist": true,
+      "date": "2026-04-03"
+    },
+    {
+      "id": "2026-04-03-5",
+      "title": "Applying security fundamentals to AI: Practical advice for CISOs",
+      "summary": "Microsoft biedt concrete beveiligingsrichtlijnen voor CISO's die AI-technologieën in hun organisatie implementeren. Het artikel behandelt risicomanagement en toepassing van fundamentele beveiligingsprincipes in AI-omgevingen. Essentiële informatie voor besluitvormers die AI-adoptie plannen of uitvoeren.",
+      "impact_label": "Praktische richtlijnen voor CISO's om AI-omgevingen veilig te implementeren",
+      "impact": "high",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
+      "published": "Tue, 31 Mar 2026 16:00:00 +0000",
+      "actie_vereist": true,
+      "date": "2026-04-03"
+    },
+    {
+      "id": "2026-04-03-3",
+      "title": "Mitigating the Axios npm supply chain compromise",
+      "summary": "De populaire Axios HTTP client voor JavaScript werd gecompromitteerd door Noord-Koreaanse staatshackers (Sapphire Sleet). Miljoenen ontwikkelaars en applicaties kunnen zijn blootgesteld aan deze supply chain aanval. Organisaties moeten hun JavaScript dependencies controleren en bijwerken.",
+      "impact_label": "Supply chain aanval op populaire JavaScript library door Noord-Korea",
+      "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
       "published": "Wed, 01 Apr 2026 21:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-04-02"
+      "date": "2026-04-03"
     },
     {
-      "id": "2026-04-02-4",
-      "title": "WhatsApp malware campaign delivers VBScript and MSI backdoors",
-      "summary": "Een nieuwe malware campagne gebruikt WhatsApp berichten om VBScript te verspreiden dat een multi-stage infectieketen start. De aanval gebruikt hernoemde Windows tools en cloud-hosted payloads voor persistente toegang. Organisaties moeten endpoint beveiliging en gebruikerstraining versterken.",
-      "impact_label": "WhatsApp malware installeert backdoors via VBScript en MSI",
-      "impact": "high",
-      "category": "security",
-      "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/",
-      "published": "Tue, 31 Mar 2026 13:43:05 +0000",
-      "actie_vereist": true,
-      "date": "2026-04-02"
-    },
-    {
-      "id": "2026-04-02-2",
+      "id": "2026-04-03-4",
       "title": "The threat to critical infrastructure has changed. Has your readiness?",
-      "summary": "Microsoft Threat Intelligence rapporteert veranderende dreigingen voor kritieke infrastructuur. Het artikel presenteert vijf belangrijke feiten waar CI-leiders op moeten anticiperen. Relevant voor organisaties die kritieke diensten leveren of afhankelijk zijn van kritieke infrastructuur.",
-      "impact_label": "Nieuwe dreigingen voor kritieke infrastructuur in 2026",
+      "summary": "Microsoft Threat Intelligence waarschuwt voor veranderende bedreigingen tegen kritieke infrastructuur in 2026. Organisaties moeten hun beveiligingsstrategie aanpassen aan nieuwe dreigingen en aanvalsvectoren. Het artikel biedt vijf concrete aandachtspunten voor infrastructuur managers.",
+      "impact_label": "Veranderende bedreigingen voor kritieke infrastructuur vereisen aangepaste beveiliging",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
       "published": "Tue, 31 Mar 2026 17:00:00 +0000",
-      "actie_vereist": false,
-      "date": "2026-04-02"
-    },
-    {
-      "id": "2026-04-02-3",
-      "title": "Applying security fundamentals to AI: Practical advice for CISOs",
-      "summary": "Microsoft biedt praktisch advies voor CISO's over het beveiligen van AI-systemen en risicomanagement. Het artikel behandelt kernprincipes voor beveiliging in AI-gedreven omgevingen. Belangrijk voor organisaties die AI-technologieën implementeren of overwegen.",
-      "impact_label": "Praktische AI-beveiligingsrichtlijnen voor CISO's en IT-beheerders",
-      "impact": "medium",
-      "category": "security",
-      "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
-      "published": "Tue, 31 Mar 2026 16:00:00 +0000",
-      "actie_vereist": false,
-      "date": "2026-04-02"
-    },
-    {
-      "id": "2026-04-02-5",
-      "title": "Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio",
-      "summary": "Microsoft behandelt de OWASP Top 10 beveiligingsrisico's voor agentic AI applicaties en hoe deze kunnen worden aangepakt in Copilot Studio. Het artikel biedt concrete mitigaties voor organisaties die AI agents ontwikkelen of implementeren.",
-      "impact_label": "OWASP Top 10 risico's voor AI agents in Copilot Studio",
-      "impact": "medium",
-      "category": "security",
-      "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/",
-      "published": "Mon, 30 Mar 2026 16:00:00 +0000",
-      "actie_vereist": false,
-      "date": "2026-04-02"
+      "actie_vereist": true,
+      "date": "2026-04-03"
     }
   ],
   "history": {
@@ -491,6 +478,60 @@
         "published": "Mon, 30 Mar 2026 16:00:00 +0000",
         "actie_vereist": false,
         "date": "2026-04-02"
+      }
+    ],
+    "2026-04-03": [
+      {
+        "id": "2026-04-03-1",
+        "title": "Threat actor abuse of AI accelerates from tool to cyberattack surface",
+        "summary": "Cybercriminelen gebruiken generative AI om geavanceerdere aanvallen uit te voeren, met een drastische toename in phishing-effectiviteit. De technologie wordt niet alleen als tool gebruikt maar vormt ook een nieuw aanvalsvector. Dit heeft directe gevolgen voor organisaties die afhankelijk zijn van traditionele beveiligingsmaatregelen.",
+        "impact_label": "AI verhoogt phishing-succes met 450% en bypast MFA industrieel",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/",
+        "published": "Thu, 02 Apr 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-03"
+      },
+      {
+        "id": "2026-04-03-5",
+        "title": "Applying security fundamentals to AI: Practical advice for CISOs",
+        "summary": "Microsoft biedt concrete beveiligingsrichtlijnen voor CISO's die AI-technologieën in hun organisatie implementeren. Het artikel behandelt risicomanagement en toepassing van fundamentele beveiligingsprincipes in AI-omgevingen. Essentiële informatie voor besluitvormers die AI-adoptie plannen of uitvoeren.",
+        "impact_label": "Praktische richtlijnen voor CISO's om AI-omgevingen veilig te implementeren",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
+        "published": "Tue, 31 Mar 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-03"
+      },
+      {
+        "id": "2026-04-03-3",
+        "title": "Mitigating the Axios npm supply chain compromise",
+        "summary": "De populaire Axios HTTP client voor JavaScript werd gecompromitteerd door Noord-Koreaanse staatshackers (Sapphire Sleet). Miljoenen ontwikkelaars en applicaties kunnen zijn blootgesteld aan deze supply chain aanval. Organisaties moeten hun JavaScript dependencies controleren en bijwerken.",
+        "impact_label": "Supply chain aanval op populaire JavaScript library door Noord-Korea",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+        "published": "Wed, 01 Apr 2026 21:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-03"
+      },
+      {
+        "id": "2026-04-03-4",
+        "title": "The threat to critical infrastructure has changed. Has your readiness?",
+        "summary": "Microsoft Threat Intelligence waarschuwt voor veranderende bedreigingen tegen kritieke infrastructuur in 2026. Organisaties moeten hun beveiligingsstrategie aanpassen aan nieuwe dreigingen en aanvalsvectoren. Het artikel biedt vijf concrete aandachtspunten voor infrastructuur managers.",
+        "impact_label": "Veranderende bedreigingen voor kritieke infrastructuur vereisen aangepaste beveiliging",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
+        "published": "Tue, 31 Mar 2026 17:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-03"
       }
     ]
   }
