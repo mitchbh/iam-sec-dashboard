@@ -1,65 +1,65 @@
 {
   "stats": {
     "total": 4,
-    "high_impact": 2,
+    "high_impact": 1,
     "actie_vereist": 4,
     "identity_count": 0,
-    "last_updated": "2026-04-04 06:59 UTC",
-    "date": "2026-04-04",
-    "days_archived": 9
+    "last_updated": "2026-04-05 07:04 UTC",
+    "date": "2026-04-05",
+    "days_archived": 10
   },
   "items": [
     {
-      "id": "2026-04-04-1",
+      "id": "2026-04-05-1",
       "title": "Threat actor abuse of AI accelerates from tool to cyberattack surface",
-      "summary": "Cybercriminelen gebruiken generative AI om phishing-aanvallen te verbeteren, met 450% hogere klikpercentages. Ook MFA-bypass wordt geïndustrialiseerd door AI-misbruik. Dit vormt een directe bedreiging voor organisaties die afhankelijk zijn van traditionele beveiligingsmaatregelen.",
-      "impact_label": "AI-misbruik verhoogt phishing succes met 450% en bedreigt MFA",
+      "summary": "Cybercriminelen gebruiken generative AI om phishing-aanvallen 450% effectiever te maken en MFA-beveiliging op industriële schaal te omzeilen. Dit vormt een directe bedreiging voor Microsoft 365 omgevingen waar MFA een kritieke beveiligingslaag is.",
+      "impact_label": "AI-aanvallen verhogen phishing-clicks met 450% en bypass MFA",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/",
       "published": "Thu, 02 Apr 2026 16:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-04-04"
+      "date": "2026-04-05"
     },
     {
-      "id": "2026-04-04-5",
-      "title": "Applying security fundamentals to AI: Practical advice for CISOs",
-      "summary": "Microsoft geeft praktisch advies voor CISOs over het beveiligen van AI-omgevingen en risicobeheer. Het artikel behandelt het toepassen van fundamentele beveiligingsprincipes in AI-gedreven omgevingen. Voor organisaties die AI integreren in hun M365-omgeving is dit cruciaal.",
-      "impact_label": "Praktische AI-beveiligingsrichtlijnen voor CISOs en risicomanagement",
-      "impact": "high",
-      "category": "security",
-      "source": "Microsoft Security Blog",
-      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
-      "published": "Tue, 31 Mar 2026 16:00:00 +0000",
-      "actie_vereist": true,
-      "date": "2026-04-04"
-    },
-    {
-      "id": "2026-04-04-3",
+      "id": "2026-04-05-3",
       "title": "Mitigating the Axios npm supply chain compromise",
-      "summary": "Het populaire Axios npm package werd gecompromitteerd door Noord-Koreaanse hackers (Sapphire Sleet). Miljoenen gebruikers waren potentieel blootgesteld aan malware via de supply chain. Organisaties moeten hun JavaScript dependencies controleren en bijwerken.",
-      "impact_label": "Supply chain aanval op populaire JavaScript library door Noord-Korea",
+      "summary": "Noord-Koreaanse hackers hebben de populaire Axios npm package gecompromitteerd, waardoor miljoenen JavaScript gebruikers zijn blootgesteld. Organisaties die custom applicaties ontwikkelen die integreren met Microsoft 365 kunnen getroffen zijn.",
+      "impact_label": "Supply chain aanval kan organisaties met JavaScript ontwikkeling raken",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
       "published": "Wed, 01 Apr 2026 21:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-04-04"
+      "date": "2026-04-05"
     },
     {
-      "id": "2026-04-04-4",
+      "id": "2026-04-05-4",
       "title": "The threat to critical infrastructure has changed. Has your readiness?",
-      "summary": "Microsoft Threat Intelligence waarschuwt dat bedreigingen voor kritieke infrastructuur zijn veranderd in 2026. CISOs moeten hun gereedheid aanpassen aan nieuwe dreigingspatronen. Het artikel bevat vijf belangrijke feiten waar infrastructuurbeheerders op moeten handelen.",
-      "impact_label": "Veranderende bedreigingen voor kritieke infrastructuur vragen nieuwe aanpak",
+      "summary": "Microsoft Threat Intelligence waarschuwt dat bedreigingen voor kritieke infrastructuur zijn toegenomen in 2026. Organisaties moeten hun security readiness heroverwegen, vooral die welke Microsoft 365 en Azure services gebruiken voor bedrijfskritieke processen.",
+      "impact_label": "Verhoogde dreigingen voor kritieke infrastructuur organisaties met Microsoft diensten",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
       "published": "Tue, 31 Mar 2026 17:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-04-04"
+      "date": "2026-04-05"
+    },
+    {
+      "id": "2026-04-05-5",
+      "title": "Applying security fundamentals to AI: Practical advice for CISOs",
+      "summary": "Microsoft geeft praktisch advies aan CISO's voor het beveiligen van AI-implementaties en risicomanagement. Dit is relevant voor organisaties die Microsoft Copilot en andere AI-diensten in hun Microsoft 365 omgeving gebruiken.",
+      "impact_label": "AI-beveiliging wordt essentieel voor CISO's in Microsoft omgevingen",
+      "impact": "medium",
+      "category": "security",
+      "source": "Microsoft Security Blog",
+      "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
+      "published": "Tue, 31 Mar 2026 16:00:00 +0000",
+      "actie_vereist": true,
+      "date": "2026-04-05"
     }
   ],
   "history": {
@@ -586,6 +586,60 @@
         "published": "Tue, 31 Mar 2026 17:00:00 +0000",
         "actie_vereist": true,
         "date": "2026-04-04"
+      }
+    ],
+    "2026-04-05": [
+      {
+        "id": "2026-04-05-1",
+        "title": "Threat actor abuse of AI accelerates from tool to cyberattack surface",
+        "summary": "Cybercriminelen gebruiken generative AI om phishing-aanvallen 450% effectiever te maken en MFA-beveiliging op industriële schaal te omzeilen. Dit vormt een directe bedreiging voor Microsoft 365 omgevingen waar MFA een kritieke beveiligingslaag is.",
+        "impact_label": "AI-aanvallen verhogen phishing-clicks met 450% en bypass MFA",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/",
+        "published": "Thu, 02 Apr 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-05"
+      },
+      {
+        "id": "2026-04-05-3",
+        "title": "Mitigating the Axios npm supply chain compromise",
+        "summary": "Noord-Koreaanse hackers hebben de populaire Axios npm package gecompromitteerd, waardoor miljoenen JavaScript gebruikers zijn blootgesteld. Organisaties die custom applicaties ontwikkelen die integreren met Microsoft 365 kunnen getroffen zijn.",
+        "impact_label": "Supply chain aanval kan organisaties met JavaScript ontwikkeling raken",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/",
+        "published": "Wed, 01 Apr 2026 21:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-05"
+      },
+      {
+        "id": "2026-04-05-4",
+        "title": "The threat to critical infrastructure has changed. Has your readiness?",
+        "summary": "Microsoft Threat Intelligence waarschuwt dat bedreigingen voor kritieke infrastructuur zijn toegenomen in 2026. Organisaties moeten hun security readiness heroverwegen, vooral die welke Microsoft 365 en Azure services gebruiken voor bedrijfskritieke processen.",
+        "impact_label": "Verhoogde dreigingen voor kritieke infrastructuur organisaties met Microsoft diensten",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed",
+        "published": "Tue, 31 Mar 2026 17:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-05"
+      },
+      {
+        "id": "2026-04-05-5",
+        "title": "Applying security fundamentals to AI: Practical advice for CISOs",
+        "summary": "Microsoft geeft praktisch advies aan CISO's voor het beveiligen van AI-implementaties en risicomanagement. Dit is relevant voor organisaties die Microsoft Copilot en andere AI-diensten in hun Microsoft 365 omgeving gebruiken.",
+        "impact_label": "AI-beveiliging wordt essentieel voor CISO's in Microsoft omgevingen",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/",
+        "published": "Tue, 31 Mar 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-05"
       }
     ]
   }
