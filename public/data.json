@@ -4,49 +4,49 @@
     "high_impact": 2,
     "actie_vereist": 3,
     "identity_count": 0,
-    "last_updated": "2026-04-08 07:17 UTC",
-    "date": "2026-04-08",
-    "days_archived": 13
+    "last_updated": "2026-04-09 07:20 UTC",
+    "date": "2026-04-09",
+    "days_archived": 14
   },
   "items": [
     {
-      "id": "2026-04-08-2",
+      "id": "2026-04-09-2",
       "title": "Inside an AI‑enabled device code phishing campaign",
-      "summary": "AI-gestuurde phishing campagne gebruikt device codes om M365 accounts te compromitteren. Aanvallers genereren live authenticatiecodes en omzeilen traditionele beveiligingsmaatregelen met geautomatiseerde tools.",
-      "impact_label": "Directe bedreiging voor M365 authenticatie en toegangsbeheer",
+      "summary": "Nieuwe AI-gestuurde phishing campagne gebruikt device code authenticatie om Microsoft 365 accounts te compromitteren. Aanvallers genereren live authenticatiecodes en behalen hogere succespercentages door geautomatiseerde processen.",
+      "impact_label": "Ernstige bedreiging voor M365 account security via device codes",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/06/ai-enabled-device-code-phishing-campaign-april-2026/",
       "published": "Mon, 06 Apr 2026 16:34:17 +0000",
       "actie_vereist": true,
-      "date": "2026-04-08"
+      "date": "2026-04-09"
     },
     {
-      "id": "2026-04-08-4",
+      "id": "2026-04-09-4",
       "title": "Threat actor abuse of AI accelerates from tool to cyberattack surface",
-      "summary": "Cybercriminelen gebruiken AI om aanvallen te verbeteren, met 450% hogere phishing click-through rates. Ze industrialiseren MFA bypass technieken, wat direct M365 beveiliging bedreigt.",
-      "impact_label": "AI verhoogt phishing succes met 450%, bedreigt MFA beveiliging",
+      "summary": "Threat actors gebruiken generative AI om cyberaanvallen te verbeteren, resulterend in 450% hogere phishing click-through rates. AI wordt ingezet voor geïndustrialiseerde MFA bypass technieken, wat een ernstige bedreiging vormt voor identity management.",
+      "impact_label": "AI verhoogt cyberaanvallen met 450% hogere phishing success rates",
       "impact": "high",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/",
       "published": "Thu, 02 Apr 2026 16:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-04-08"
+      "date": "2026-04-09"
     },
     {
-      "id": "2026-04-08-3",
+      "id": "2026-04-09-3",
       "title": "Storm-1175 focuses gaze on vulnerable web-facing assets in high-tempo Medusa ransomware operations",
-      "summary": "Storm-1175 voert snelle ransomware aanvallen uit via kwetsbare web-applicaties. Ze misbruiken recent ontdekte vulnerabiliteiten voor initiële toegang en data exfiltratie voordat ze Medusa ransomware inzetten.",
-      "impact_label": "Bedreiging voor web-facing assets die M365 services ondersteunen",
+      "summary": "Cybercriminele groep Storm-1175 voert snelle ransomware campagnes uit door recente kwetsbaarheden te misbruiken. Ze richten zich op web-facing assets voor initiële toegang, data exfiltratie en Medusa ransomware deployment.",
+      "impact_label": "Ransomware groep target kwetsbare web-assets, impact op bedrijfsomgevingen",
       "impact": "medium",
       "category": "security",
       "source": "Microsoft Security Blog",
       "link": "https://www.microsoft.com/en-us/security/blog/2026/04/06/storm-1175-focuses-gaze-on-vulnerable-web-facing-assets-in-high-tempo-medusa-ransomware-operations/",
       "published": "Mon, 06 Apr 2026 16:00:00 +0000",
       "actie_vereist": true,
-      "date": "2026-04-08"
+      "date": "2026-04-09"
     }
   ],
   "history": {
@@ -776,6 +776,47 @@
         "published": "Mon, 06 Apr 2026 16:00:00 +0000",
         "actie_vereist": true,
         "date": "2026-04-08"
+      }
+    ],
+    "2026-04-09": [
+      {
+        "id": "2026-04-09-2",
+        "title": "Inside an AI‑enabled device code phishing campaign",
+        "summary": "Nieuwe AI-gestuurde phishing campagne gebruikt device code authenticatie om Microsoft 365 accounts te compromitteren. Aanvallers genereren live authenticatiecodes en behalen hogere succespercentages door geautomatiseerde processen.",
+        "impact_label": "Ernstige bedreiging voor M365 account security via device codes",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/06/ai-enabled-device-code-phishing-campaign-april-2026/",
+        "published": "Mon, 06 Apr 2026 16:34:17 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-09"
+      },
+      {
+        "id": "2026-04-09-4",
+        "title": "Threat actor abuse of AI accelerates from tool to cyberattack surface",
+        "summary": "Threat actors gebruiken generative AI om cyberaanvallen te verbeteren, resulterend in 450% hogere phishing click-through rates. AI wordt ingezet voor geïndustrialiseerde MFA bypass technieken, wat een ernstige bedreiging vormt voor identity management.",
+        "impact_label": "AI verhoogt cyberaanvallen met 450% hogere phishing success rates",
+        "impact": "high",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/",
+        "published": "Thu, 02 Apr 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-09"
+      },
+      {
+        "id": "2026-04-09-3",
+        "title": "Storm-1175 focuses gaze on vulnerable web-facing assets in high-tempo Medusa ransomware operations",
+        "summary": "Cybercriminele groep Storm-1175 voert snelle ransomware campagnes uit door recente kwetsbaarheden te misbruiken. Ze richten zich op web-facing assets voor initiële toegang, data exfiltratie en Medusa ransomware deployment.",
+        "impact_label": "Ransomware groep target kwetsbare web-assets, impact op bedrijfsomgevingen",
+        "impact": "medium",
+        "category": "security",
+        "source": "Microsoft Security Blog",
+        "link": "https://www.microsoft.com/en-us/security/blog/2026/04/06/storm-1175-focuses-gaze-on-vulnerable-web-facing-assets-in-high-tempo-medusa-ransomware-operations/",
+        "published": "Mon, 06 Apr 2026 16:00:00 +0000",
+        "actie_vereist": true,
+        "date": "2026-04-09"
       }
     ]
   }
